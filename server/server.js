@@ -11,8 +11,8 @@ var rollbar = new Rollbar({
 })
 
 rollbar.log('Hello world!')
-
 rollbar.info("App up and running!")
+rollbar.error("Error")
 
 app.use(express.json())
 console.log(__dirname);
