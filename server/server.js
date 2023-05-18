@@ -3,6 +3,15 @@ const path = require('path')
 
 const app = express()
 
+var Rollbar = require('rollbar')
+var rollbar = new Rollbar({
+  accessToken: '48b8a757e0f243b297d59471e98a73d7',
+  captureUncaught: true,
+  captureUnhandledRejections: true,
+})
+
+rollbar.log('Hello world!')
+
 app.use(express.json())
 console.log(__dirname);
 app.use(express.static(path.join(__dirname, '../public')))
