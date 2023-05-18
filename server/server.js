@@ -12,6 +12,14 @@ var rollbar = new Rollbar({
 
 rollbar.log('Hello world!')
 
+try {
+    nonExistentFunction();
+  } catch (error) {
+    console.error(error);
+    // Expected output: ReferenceError: nonExistentFunction is not defined
+    // (Note: the exact output may be browser-dependent)
+  }``
+
 app.use(express.json())
 console.log(__dirname);
 app.use(express.static(path.join(__dirname, '../public')))
